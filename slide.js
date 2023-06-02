@@ -3,7 +3,8 @@ let shopSlide = document.getElementById('shop-slide')
 let shopSlides = document.getElementsByClassName('ss')
 let dealSlide = document.getElementById('deal-slide')
 let dealSlides = document.getElementsByClassName('deal')
-console.log(dealSlides.length)
+let dealWidth = dealSlides[0].offsetWidth
+console.log(dealWidth)
 const state = {
     n : 0,
     x:0
@@ -74,8 +75,7 @@ function listeners() {
 listeners()
 function slideShow() {
     shopSlide.style.right = `${100 * state.n}%`
-    dealSlide.style.right = `${100 * state.x}%`
-  
+    dealSlide.style.right = `${dealWidth * state.x}px`
 }
 slideShow()
 
